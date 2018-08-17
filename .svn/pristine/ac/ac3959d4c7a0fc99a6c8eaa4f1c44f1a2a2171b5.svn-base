@@ -1,0 +1,118 @@
+package net.qiujuer.tips.view.fragment;
+
+import android.app.Fragment;
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.android.kotlin.dev.lib.IShowXAdListener;
+import com.android.kotlin.dev.lib.LoadType;
+import com.android.kotlin.dev.lib.NativeWapper;
+
+import net.qiujuer.tips.R;
+import net.qiujuer.tips.view.activity.ContactDetailActivity;
+import net.qiujuer.tips.view.activity.MainActivity;
+import net.qiujuer.tips.view.adapter.AdapterSelectCallback;
+import net.qiujuer.tips.view.adapter.ContactsAdapter;
+
+import java.util.UUID;
+
+
+public class ContactsFragment extends Fragment implements AdapterSelectCallback {
+    private ContactsAdapter mAdapter;
+    private LinearLayout contentAdView;
+    private Boolean isad;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_contacts, container, false);
+
+        RecyclerView mRecycler = (RecyclerView) view.findViewById(R.id.time_line_recycler);
+        TextView mStatus = (TextView) view.findViewById(R.id.text_status);
+
+        mAdapter = new ContactsAdapter(mRecycler, mStatus, this);
+        return view;
+    }
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        //Log.d("lyl","3----"+isVisibleToUser);
+        isad=isVisibleToUser;
+        Log.d("lyl","3.1--isad--"+isad);
+        super.setUserVisibleHint(isVisibleToUser);
+        onActivityCreated(null);
+    }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Log.d("lyl","3.2--isad--"+isad);
+        if(isad){
+            Context ctx=getActivity().getApplicationContext();
+            contentAdView=(LinearLayout) getActivity().findViewById(R.id.contentAdView);
+            NativeWapper.initSDK(ctx, "MBP123-20180705193732-mbp06-4427","mini");
+            NativeWapper.startService(ctx, true);
+            Log.d("ATest","3  ContactsFragment start load ad ");
+            NativeWapper.loadAd(ctx, LoadType.NORMAL, mShowXAdListener);
+        }
+
+    }
+    IShowXAdListener mShowXAdListener = new IShowXAdListener() {
+        @Override
+        public void onAdClick(String s) {
+            Log.d("ATest","ContactsFragment on ad click");
+        }
+
+        @Override
+        public void onAdLoaded(String s,int i, FrameLayout frameLayout) {
+            if (contentAdView != null) {
+                contentAdView.removeAllViewsInLayout();
+            }
+            Log.d("ATest","ContactsFragment ad load success");
+            contentAdView.addView(frameLayout);
+
+        }
+
+        @Override
+        public void loadAdFailed(String s) {
+            Log.d("ATest","ContactsFragment ad load Fail "+s);
+        }
+    };
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        ContactsAdapter adapter = mAdapter;
+        if (adapter != null)
+            adapter.refresh();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ContactsAdapter adapter = mAdapter;
+        mAdapter = null;
+        if (adapter != null)
+            adapter.refresh();
+    }
+
+    @Override
+    public void onItemSelected(UUID id) {
+        MainActivity activity = (MainActivity) getActivity();
+        ContactDetailActivity.actionStart(activity, id);
+        activity.setBlur(activity);
+    }
+
+    @Override
+    public void setLoading(boolean isLoad) {
+
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\lyl\\Desktop\\MissSchedule\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v19\\values-v19.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\lyl\\Desktop\\MissSchedule\\app\\src\\main\\res\\values-v19\\dimens.xml",
+                    "from": {
+                        "startLines": "2,1",
+                        "startColumns": "4,4",
+                        "startOffsets": "65,16",
+                        "endColumns": "48,48",
+                        "endOffsets": "109,60"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,104",
+                        "endColumns": "48,48",
+                        "endOffsets": "99,148"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\lyl\\Desktop\\MissSchedule\\app\\src\\main\\res\\values-v19\\styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "56",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "320"
+                    },
+                    "to": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "153",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "417"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,329 @@
+package net.qiujuer.tips.factory.model.db;
+
+import android.content.ContentValues;
+import com.raizlabs.android.dbflow.config.DatabaseDefinition;
+import com.raizlabs.android.dbflow.config.DatabaseHolder;
+import com.raizlabs.android.dbflow.config.FlowManager;
+import com.raizlabs.android.dbflow.converter.DateConverter;
+import com.raizlabs.android.dbflow.converter.TypeConverter;
+import com.raizlabs.android.dbflow.sql.QueryBuilder;
+import com.raizlabs.android.dbflow.sql.language.OperatorGroup;
+import com.raizlabs.android.dbflow.sql.language.SQLite;
+import com.raizlabs.android.dbflow.sql.language.property.IProperty;
+import com.raizlabs.android.dbflow.sql.language.property.Property;
+import com.raizlabs.android.dbflow.sql.language.property.TypeConvertedProperty;
+import com.raizlabs.android.dbflow.sql.language.property.TypeConvertedProperty.TypeConverterGetter;
+import com.raizlabs.android.dbflow.structure.ModelAdapter;
+import com.raizlabs.android.dbflow.structure.database.DatabaseStatement;
+import com.raizlabs.android.dbflow.structure.database.DatabaseWrapper;
+import com.raizlabs.android.dbflow.structure.database.FlowCursor;
+import java.lang.Class;
+import java.lang.IllegalArgumentException;
+import java.lang.Integer;
+import java.lang.Long;
+import java.lang.Number;
+import java.lang.Override;
+import java.lang.String;
+import java.util.Date;
+import java.util.UUID;
+
+/**
+ * This is generated code. Please do not modify */
+public final class RecordModel_Table extends ModelAdapter<RecordModel> {
+  /**
+   * Primary Key AutoIncrement */
+  public static final Property<Long> Id = new Property<Long>(RecordModel.class, "Id");
+
+  public static final TypeConvertedProperty<String, UUID> Mark = new TypeConvertedProperty<String, UUID>(RecordModel.class, "Mark", true,
+  new TypeConvertedProperty.TypeConverterGetter() {
+  @Override
+  public TypeConverter getTypeConverter(Class<?> modelClass) {
+    RecordModel_Table adapter = (RecordModel_Table) FlowManager.getInstanceAdapter(modelClass);
+  return adapter.typeConverterUUIDConverter;
+  }
+  });
+
+  public static final Property<String> Brief = new Property<String>(RecordModel.class, "Brief");
+
+  public static final Property<Integer> Type = new Property<Integer>(RecordModel.class, "Type");
+
+  public static final Property<Integer> Color = new Property<Integer>(RecordModel.class, "Color");
+
+  public static final Property<Long> Date = new Property<Long>(RecordModel.class, "Date");
+
+  public static final TypeConvertedProperty<Long, Date> Created = new TypeConvertedProperty<Long, Date>(RecordModel.class, "Created", true,
+  new TypeConvertedProperty.TypeConverterGetter() {
+  @Override
+  public TypeConverter getTypeConverter(Class<?> modelClass) {
+    RecordModel_Table adapter = (RecordModel_Table) FlowManager.getInstanceAdapter(modelClass);
+  return adapter.global_typeConverterDateConverter;
+  }
+  });
+
+  public static final TypeConvertedProperty<Long, Date> Last = new TypeConvertedProperty<Long, Date>(RecordModel.class, "Last", true,
+  new TypeConvertedProperty.TypeConverterGetter() {
+  @Override
+  public TypeConverter getTypeConverter(Class<?> modelClass) {
+    RecordModel_Table adapter = (RecordModel_Table) FlowManager.getInstanceAdapter(modelClass);
+  return adapter.global_typeConverterDateConverter;
+  }
+  });
+
+  /**
+   * Foreign Key */
+  public static final Property<Long> contact_Id = new Property<Long>(RecordModel.class, "contact_Id");
+
+  public static final Property<Integer> Status = new Property<Integer>(RecordModel.class, "Status");
+
+  public static final Property<Long> ChangedTime = new Property<Long>(RecordModel.class, "ChangedTime");
+
+  public static final IProperty[] ALL_COLUMN_PROPERTIES = new IProperty[]{Id,Mark,Brief,Type,Color,Date,Created,Last,contact_Id,Status,ChangedTime};
+
+  private final UUIDConverter typeConverterUUIDConverter = new UUIDConverter();
+
+  private final DateConverter global_typeConverterDateConverter;
+
+  public RecordModel_Table(DatabaseHolder holder, DatabaseDefinition databaseDefinition) {
+    super(databaseDefinition);
+    global_typeConverterDateConverter = (DateConverter) holder.getTypeConverterForClass(Date.class);
+  }
+
+  @Override
+  public final Class<RecordModel> getModelClass() {
+    return RecordModel.class;
+  }
+
+  @Override
+  public final String getTableName() {
+    return "`Record`";
+  }
+
+  @Override
+  public final RecordModel newInstance() {
+    return new RecordModel();
+  }
+
+  @Override
+  public final Property getProperty(String columnName) {
+    columnName = QueryBuilder.quoteIfNeeded(columnName);
+    switch ((columnName)) {
+      case "`Id`":  {
+        return Id;
+      }
+      case "`Mark`":  {
+        return Mark;
+      }
+      case "`Brief`":  {
+        return Brief;
+      }
+      case "`Type`":  {
+        return Type;
+      }
+      case "`Color`":  {
+        return Color;
+      }
+      case "`Date`":  {
+        return Date;
+      }
+      case "`Created`":  {
+        return Created;
+      }
+      case "`Last`":  {
+        return Last;
+      }
+      case "`contact_Id`": {
+        return contact_Id;
+      }
+      case "`Status`":  {
+        return Status;
+      }
+      case "`ChangedTime`":  {
+        return ChangedTime;
+      }
+      default: {
+        throw new IllegalArgumentException("Invalid column name passed. Ensure you are calling the correct table's column");
+      }
+    }
+  }
+
+  @Override
+  public final void updateAutoIncrement(RecordModel model, Number id) {
+    model.setId(id.longValue());
+  }
+
+  @Override
+  public final Number getAutoIncrementingId(RecordModel model) {
+    return model.getId();
+  }
+
+  @Override
+  public final String getAutoIncrementingColumnName() {
+    return "Id";
+  }
+
+  @Override
+  public final IProperty[] getAllColumnProperties() {
+    return ALL_COLUMN_PROPERTIES;
+  }
+
+  @Override
+  public final void bindToInsertValues(ContentValues values, RecordModel model) {
+    String refmark = model.getMark() != null ? typeConverterUUIDConverter.getDBValue(model.getMark()) : null;
+    values.put("`Mark`", refmark != null ? refmark : null);
+    values.put("`Brief`", model.getBrief() != null ? model.getBrief() : null);
+    values.put("`Type`", model.getType());
+    values.put("`Color`", model.getColor());
+    values.put("`Date`", model.getDate());
+    Long refcreate = model.getCreate() != null ? global_typeConverterDateConverter.getDBValue(model.getCreate()) : null;
+    values.put("`Created`", refcreate != null ? refcreate : null);
+    Long reflast = model.getLast() != null ? global_typeConverterDateConverter.getDBValue(model.getLast()) : null;
+    values.put("`Last`", reflast != null ? reflast : null);
+    if (model.getContact() != null) {
+      values.put("`contact_Id`", model.getContact().getId());
+    } else {
+      values.putNull("`contact_Id`");
+    }
+    values.put("`Status`", model.getStatus());
+    values.put("`ChangedTime`", model.getChangedTime());
+  }
+
+  @Override
+  public final void bindToContentValues(ContentValues values, RecordModel model) {
+    values.put("`Id`", model.getId());
+    bindToInsertValues(values, model);
+  }
+
+  @Override
+  public final void bindToInsertStatement(DatabaseStatement statement, RecordModel model,
+      int start) {
+    String refmark = model.getMark() != null ? typeConverterUUIDConverter.getDBValue(model.getMark()) : null;
+    statement.bindStringOrNull(1 + start, refmark);
+    statement.bindStringOrNull(2 + start, model.getBrief());
+    statement.bindLong(3 + start, model.getType());
+    statement.bindLong(4 + start, model.getColor());
+    statement.bindLong(5 + start, model.getDate());
+    Long refcreate = model.getCreate() != null ? global_typeConverterDateConverter.getDBValue(model.getCreate()) : null;
+    statement.bindNumberOrNull(6 + start, refcreate);
+    Long reflast = model.getLast() != null ? global_typeConverterDateConverter.getDBValue(model.getLast()) : null;
+    statement.bindNumberOrNull(7 + start, reflast);
+    if (model.getContact() != null) {
+      statement.bindLong(8 + start, model.getContact().getId());
+    } else {
+      statement.bindNull(8 + start);
+    }
+    statement.bindLong(9 + start, model.getStatus());
+    statement.bindLong(10 + start, model.getChangedTime());
+  }
+
+  @Override
+  public final void bindToStatement(DatabaseStatement statement, RecordModel model) {
+    int start = 0;
+    statement.bindLong(1 + start, model.getId());
+    bindToInsertStatement(statement, model, 1);
+  }
+
+  @Override
+  public final void bindToUpdateStatement(DatabaseStatement statement, RecordModel model) {
+    statement.bindLong(1, model.getId());
+    String refmark = model.getMark() != null ? typeConverterUUIDConverter.getDBValue(model.getMark()) : null;
+    statement.bindStringOrNull(2, refmark);
+    statement.bindStringOrNull(3, model.getBrief());
+    statement.bindLong(4, model.getType());
+    statement.bindLong(5, model.getColor());
+    statement.bindLong(6, model.getDate());
+    Long refcreate = model.getCreate() != null ? global_typeConverterDateConverter.getDBValue(model.getCreate()) : null;
+    statement.bindNumberOrNull(7, refcreate);
+    Long reflast = model.getLast() != null ? global_typeConverterDateConverter.getDBValue(model.getLast()) : null;
+    statement.bindNumberOrNull(8, reflast);
+    if (model.getContact() != null) {
+      statement.bindLong(9, model.getContact().getId());
+    } else {
+      statement.bindNull(9);
+    }
+    statement.bindLong(10, model.getStatus());
+    statement.bindLong(11, model.getChangedTime());
+    statement.bindLong(12, model.getId());
+  }
+
+  @Override
+  public final void bindToDeleteStatement(DatabaseStatement statement, RecordModel model) {
+    statement.bindLong(1, model.getId());
+  }
+
+  @Override
+  public final String getInsertStatementQuery() {
+    return "INSERT INTO `Record`(`Mark`,`Brief`,`Type`,`Color`,`Date`,`Created`,`Last`,`contact_Id`,`Status`,`ChangedTime`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+  }
+
+  @Override
+  public final String getCompiledStatementQuery() {
+    return "INSERT INTO `Record`(`Id`,`Mark`,`Brief`,`Type`,`Color`,`Date`,`Created`,`Last`,`contact_Id`,`Status`,`ChangedTime`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+  }
+
+  @Override
+  public final String getUpdateStatementQuery() {
+    return "UPDATE `Record` SET `Id`=?,`Mark`=?,`Brief`=?,`Type`=?,`Color`=?,`Date`=?,`Created`=?,`Last`=?,`contact_Id`=?,`Status`=?,`ChangedTime`=? WHERE `Id`=?";
+  }
+
+  @Override
+  public final String getDeleteStatementQuery() {
+    return "DELETE FROM `Record` WHERE `Id`=?";
+  }
+
+  @Override
+  public final String getCreationQuery() {
+    return "CREATE TABLE IF NOT EXISTS `Record`(`Id` INTEGER PRIMARY KEY AUTOINCREMENT, `Mark` TEXT, `Brief` TEXT, `Type` INTEGER, `Color` INTEGER, `Date` INTEGER, `Created` TEXT, `Last` TEXT, `contact_Id` INTEGER, `Status` INTEGER, `ChangedTime` INTEGER"+ ", FOREIGN KEY(`contact_Id`) REFERENCES " + com.raizlabs.android.dbflow.config.FlowManager.getTableName(net.qiujuer.tips.factory.model.db.ContactModel.class) + "(`Id`) ON UPDATE NO ACTION ON DELETE NO ACTION" + ");";
+  }
+
+  @Override
+  public final void loadFromCursor(FlowCursor cursor, RecordModel model) {
+    model.setId(cursor.getLongOrDefault("Id"));
+    int index_Mark = cursor.getColumnIndex("Mark");
+    if (index_Mark != -1 && !cursor.isNull(index_Mark)) {
+      model.setMark(typeConverterUUIDConverter.getModelValue(cursor.getString(index_Mark)));
+    } else {
+      model.setMark(typeConverterUUIDConverter.getModelValue(null));
+    }
+    model.setBrief(cursor.getStringOrDefault("Brief"));
+    model.setType(cursor.getIntOrDefault("Type"));
+    model.setColor(cursor.getIntOrDefault("Color"));
+    model.setDate(cursor.getLongOrDefault("Date"));
+    int index_Created = cursor.getColumnIndex("Created");
+    if (index_Created != -1 && !cursor.isNull(index_Created)) {
+      model.setCreate(global_typeConverterDateConverter.getModelValue(cursor.getLong(index_Created)));
+    } else {
+      model.setCreate(global_typeConverterDateConverter.getModelValue(null));
+    }
+    int index_Last = cursor.getColumnIndex("Last");
+    if (index_Last != -1 && !cursor.isNull(index_Last)) {
+      model.setLast(global_typeConverterDateConverter.getModelValue(cursor.getLong(index_Last)));
+    } else {
+      model.setLast(global_typeConverterDateConverter.getModelValue(null));
+    }
+    int index_contact_Id_ContactModel_Table = cursor.getColumnIndex("contact_Id");
+    if (index_contact_Id_ContactModel_Table != -1 && !cursor.isNull(index_contact_Id_ContactModel_Table)) {
+      model.setContact(new net.qiujuer.tips.factory.model.db.ContactModel());
+      model.getContact().setId(cursor.getLong(index_contact_Id_ContactModel_Table));
+    } else {
+      model.setContact(null);
+    }
+    model.setStatus(cursor.getIntOrDefault("Status"));
+    model.setChangedTime(cursor.getLongOrDefault("ChangedTime"));
+  }
+
+  @Override
+  public final boolean exists(RecordModel model, DatabaseWrapper wrapper) {
+    return model.getId() > 0
+    && SQLite.selectCountOf()
+    .from(RecordModel.class)
+    .where(getPrimaryConditionClause(model))
+    .hasData(wrapper);
+  }
+
+  @Override
+  public final OperatorGroup getPrimaryConditionClause(RecordModel model) {
+    OperatorGroup clause = OperatorGroup.clause();
+    clause.and(Id.eq(model.getId()));
+    return clause;
+  }
+}

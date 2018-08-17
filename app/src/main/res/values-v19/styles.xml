@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme" parent="Theme.Base">
+        <!-- Customize your theme here. -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="colorPrimaryDark">#998048</item>
+        <item name="colorPrimary">#f8cf73</item>
+    </style>
+</resources>

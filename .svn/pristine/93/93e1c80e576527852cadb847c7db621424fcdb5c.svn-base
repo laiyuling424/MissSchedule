@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="array_contacts_relations">
+        <item>None</item>
+
+        <item>wife</item>
+        <item>sister</item>
+        <item>girlfriend</item>
+        <item>mother</item>
+        <item>daughter</item>
+        <item>elder sister</item>
+
+        <item>husband</item>
+        <item>brother</item>
+        <item>boyfriend</item>
+        <item>father</item>
+        <item>son</item>
+        <item>elder brother</item>
+
+        <item>sworn followers</item>
+        <item>friend</item>
+
+        <item>schoolmate</item>
+        <item>elder</item>
+        <item>fellow</item>
+        <item>juniors</item>
+
+        <item>teacher</item>
+        <item>colleague</item>
+        <item>client</item>
+        <item>leader</item>
+    </array>
+    <array name="calendar_Sun_month">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>Jun</item>
+        <item>Jul</item>
+        <item>Aug</item>
+        <item>Sept</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+    </array>
+    <array name="calendar_sun_day">
+        <item> 01 </item>
+        <item> 02 </item>
+        <item> 03 </item>
+        <item> 04 </item>
+        <item> 05 </item>
+        <item> 06 </item>
+        <item> 07 </item>
+        <item> 08 </item>
+        <item> 09 </item>
+        <item> 10 </item>
+        <item> 11 </item>
+        <item> 12 </item>
+        <item> 13 </item>
+        <item> 14 </item>
+        <item> 15 </item>
+        <item> 16 </item>
+        <item> 17 </item>
+        <item> 18 </item>
+        <item> 19 </item>
+        <item> 20 </item>
+        <item> 21 </item>
+        <item> 22 </item>
+        <item> 23 </item>
+        <item> 24 </item>
+        <item> 25 </item>
+        <item> 26 </item>
+        <item> 27 </item>
+        <item> 28 </item>
+        <item> 29 </item>
+        <item> 30 </item>
+        <item> 31 </item>
+    </array>
+    <attr format="reference" name="TimeLineStyle"/>
+    <attr format="reference" name="YearStyle"/>
+    <attr format="color|reference" name="beginLine"/>
+    <attr format="color|reference" name="endLine"/>
+    <attr format="dimension" name="lineSize"/>
+    <attr format="color|reference" name="marker"/>
+    <attr format="dimension" name="markerSize"/>
+    <declare-styleable name="CalendarView"><attr format="color" name="iMainColor"/></declare-styleable>
+    <declare-styleable name="ColorPaperView"><attr format="color" name="iPaperColor"/></declare-styleable>
+    <declare-styleable name="ColorView"><attr format="color" name="iColor"/></declare-styleable>
+    <declare-styleable name="DirectionView"><attr format="dimension" name="iLineSize"/><attr format="color" name="iLineColor"/></declare-styleable>
+    <declare-styleable name="FloatAction"><attr format="color" name="iFloatColor"/><attr format="color" name="iFloatPressColor"/></declare-styleable>
+    <declare-styleable name="PieChart"><attr format="boolean" name="iChecked"/><attr format="dimension" name="iRingSize"/><attr format="color" name="iRingBackColor"/><attr format="color" name="iRingForeColor"/></declare-styleable>
+    <declare-styleable name="TimeLineMarker"><attr name="markerSize"/><attr name="marker"/><attr name="beginLine"/><attr name="endLine"/><attr name="lineSize"/></declare-styleable>
+    <declare-styleable name="YearMarker"><attr name="markerSize"/><attr name="marker"/><attr name="beginLine"/><attr name="endLine"/><attr name="lineSize"/></declare-styleable>
+    <item name="calendar_view_select_day_Picker" type="id"/>
+    <item name="calendar_view_select_month_Picker" type="id"/>
+    <item name="calendar_view_select_year_Picker" type="id"/>
+    <string name="app_name">Common</string>
+    <string name="calendar_year_str"/>
+    <string name="contacts_relation_man">man</string>
+    <string name="contacts_relation_woman">woman</string>
+    <string name="status_account_bind_failed">Bind failed, plx login again!</string>
+    <string name="status_account_bind_running">Binding…</string>
+    <string name="status_account_bind_succeed">Binding successful!</string>
+    <string name="status_account_email_incorrect">Incorrect email format!</string>
+    <string name="status_account_email_null">Email cannot be empty!</string>
+    <string name="status_account_login_account_error">Account error!</string>
+    <string name="status_account_login_expire">Current login expired, need to re login~</string>
+    <string name="status_account_login_need">You must login account~</string>
+    <string name="status_account_login_password_error">Password error!</string>
+    <string name="status_account_login_running">Login…</string>
+    <string name="status_account_password_incorrect">Password should be 6~18 len!</string>
+    <string name="status_account_password_not_confirm">Password and confirm password must be the same!</string>
+    <string name="status_account_phone_unbind">Unbound device!</string>
+    <string name="status_account_register_error">Register error!</string>
+    <string name="status_account_register_have_email">Already exists!!</string>
+    <string name="status_account_register_not_email">Incorrect email format!</string>
+    <string name="status_account_register_running">Register…</string>
+    <string name="status_app_info_error">App info error!</string>
+    <string name="status_error_un_know">unknown error!</string>
+    <string name="status_network_error">network error!</string>
+    <string name="status_network_unlink">Unconnected network!</string>
+    <string name="status_opt_delete_error">Delete failed…</string>
+    <string name="status_opt_delete_ok">Deleted！</string>
+    <string name="status_opt_save_error">Failed to save the screenshot!</string>
+    <string name="status_opt_save_ok">Saved screenshot!</string>
+    <string name="status_server_error">server error!</string>
+    <string name="status_sync_failed">Sync Failed!</string>
+    <string name="status_sync_succeed">Sync Successful～</string>
+    <style name="IDefaultContactsMarkStyle">
+        <item name="markerSize">24dp</item>
+        <item name="marker">@drawable/ic_contacts_default_marker</item>
+        <item name="beginLine">@null</item>
+        <item name="endLine">@null</item>
+        <item name="lineSize">2dp</item>
+    </style>
+    <style name="IDefaultTimeLineStyle">
+        <item name="markerSize">24dp</item>
+        <item name="marker">@drawable/ic_timeline_default_marker</item>
+        <item name="beginLine">@color/black_alpha_32</item>
+        <item name="endLine">@color/black_alpha_32</item>
+        <item name="lineSize">2dp</item>
+    </style>
+    <style name="IDefaultYearStyle">
+        <item name="markerSize">24dp</item>
+        <item name="marker">@drawable/ic_year_default_marker</item>
+        <item name="beginLine">@color/grey_300</item>
+        <item name="endLine">@color/grey_300</item>
+        <item name="lineSize">2dp</item>
+    </style>
+    <style name="View.Relation.Fill" parent="android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:background">@drawable/ic_relation_rdo_btn_bg_fill</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">@dimen/len_48</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/len_24</item>
+        <item name="android:padding">@dimen/len_4</item>
+        <item name="android:layout_marginRight">@dimen/len_4</item>
+        <item name="android:layout_marginLeft">@dimen/len_4</item>
+        <item name="android:layout_marginTop">@dimen/len_6</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>

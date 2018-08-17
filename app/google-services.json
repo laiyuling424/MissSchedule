@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "931927913137",
+    "firebase_url": "https://missschedule-8147a.firebaseio.com",
+    "project_id": "missschedule-8147a",
+    "storage_bucket": "missschedule-8147a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931927913137:android:72bd4c3a89461060",
+        "android_client_info": {
+          "package_name": "com.first.notes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931927913137-i0u8ikics7seduntub6essjhn9nhdogl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByZbGIyitZxiPYwdhjztXqfY5xiku-1-A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
