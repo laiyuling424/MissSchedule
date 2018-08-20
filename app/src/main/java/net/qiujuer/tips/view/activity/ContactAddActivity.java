@@ -16,6 +16,12 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.u3k.app.external.Ad;
+import com.u3k.app.external.InterstitialAd;
+import com.u3k.app.external.InterstitialAdListener;
+
+import net.qiujuer.tips.Application;
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.factory.model.db.ContactModel;
 import net.qiujuer.tips.factory.presenter.ContactAddPresenter;
@@ -182,6 +188,40 @@ public class ContactAddActivity extends BlurActivity implements ContactAddView,
             ContactAddActivity.this.startActivityForResult(intent, 1);
         } else if (id == R.id.btn_save) {
             mPresenter.create();
+            Log.e("lyll","ContactAddActivity start load ad");
+            InterstitialAd interstitial= new InterstitialAd(Application.token,ContactAddActivity.this, "u3k-1180816000032170818-20180816171107");
+            interstitial.setAdListener(new InterstitialAdListener() {
+                @Override
+                public void onError(Ad ad, int i, String s) {
+                    Log.e("lyll","onError ad--"+ad+"  i--"+i+"  s--"+s);
+                }
+
+                @Override
+                public void onAdLoaded(Ad ad) {
+                    Log.e("lyll","onAdLoaded ad--"+ad);
+                }
+
+                @Override
+                public void onAdClicked(Ad ad) {
+                    Log.e("lyll","onAdClicked");
+                }
+
+                @Override
+                public void onLoggingImpression(Ad ad) {
+                    Log.d("lyll","onLoggingImpression");
+                }
+
+                @Override
+                public void onInterstitialDisplayed(Ad ad) {
+                    Log.d("lyll","onInterstitialDisplayed");
+                }
+
+                @Override
+                public void onInterstitialDismissed(Ad ad) {
+                    Log.d("lyll","onInterstitialDismissed");
+                }
+            });
+            interstitial.loadAd();
         } else if (id == R.id.contacts_txt_relation) {
             if (mEdtTxtName.getText() == null || mEdtTxtName.getText().length() < 1) {
                 Toast.makeText(this, R.string.txt_contacts_name, Toast.LENGTH_SHORT).show();

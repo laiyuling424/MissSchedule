@@ -15,7 +15,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.u3k.app.external.Ad;
+import com.u3k.app.external.InterstitialAd;
+import com.u3k.app.external.InterstitialAdListener;
+
 import net.qiujuer.genius.ui.widget.FloatActionButton;
+import net.qiujuer.tips.Application;
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.common.drawable.AnimJagDrawable;
 import net.qiujuer.tips.factory.cache.Cache;
@@ -233,6 +238,40 @@ public class ContactDetailActivity extends BlurActivity implements ContactDetail
         if (viewID == R.id.contacts_Detail_btn_to_edit) {
             ContactEditActivity.actionStart(ContactDetailActivity.this, mId);
             setBlur(ContactDetailActivity.this);
+            Log.e("lyll","ContactDetailActivity start load ad");
+            InterstitialAd interstitial= new InterstitialAd(Application.token,ContactDetailActivity.this, "u3k-1180816000032170818-20180816171102");
+            interstitial.setAdListener(new InterstitialAdListener() {
+                @Override
+                public void onError(Ad ad, int i, String s) {
+                    Log.e("lyll","onError ad--"+ad+"  i--"+i+"  s--"+s);
+                }
+
+                @Override
+                public void onAdLoaded(Ad ad) {
+                    Log.e("lyll","onAdLoaded ad--"+ad);
+                }
+
+                @Override
+                public void onAdClicked(Ad ad) {
+                    Log.e("lyll","onAdClicked");
+                }
+
+                @Override
+                public void onLoggingImpression(Ad ad) {
+                    Log.d("lyll","onLoggingImpression");
+                }
+
+                @Override
+                public void onInterstitialDisplayed(Ad ad) {
+                    Log.d("lyll","onInterstitialDisplayed");
+                }
+
+                @Override
+                public void onInterstitialDismissed(Ad ad) {
+                    Log.d("lyll","onInterstitialDismissed");
+                }
+            });
+            interstitial.loadAd();
         }else if (viewID== R.id.contacts_Detail_btn_to_delete){
             showDialog(ContactDetailActivity.this, R.string.txt_status_delete_notes, null, null, new DialogInterface.OnClickListener() {
                 @Override

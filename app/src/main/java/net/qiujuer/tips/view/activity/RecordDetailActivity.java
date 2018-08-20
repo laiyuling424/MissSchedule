@@ -21,6 +21,12 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.u3k.app.external.Ad;
+import com.u3k.app.external.InterstitialAd;
+import com.u3k.app.external.InterstitialAdListener;
+
+import net.qiujuer.tips.Application;
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.common.drawable.AnimJagDrawable;
 import net.qiujuer.tips.common.widget.SimpleDateView;
@@ -150,6 +156,40 @@ public class RecordDetailActivity extends BlurActivity implements RecordDetailVi
                 hideOperation(new Runnable() {
                     @Override
                     public void run() {
+                        Log.e("lyll","RecordDetailActivity start load ad01");
+                        InterstitialAd interstitial= new InterstitialAd(Application.token,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171106");
+                        interstitial.setAdListener(new InterstitialAdListener() {
+                            @Override
+                            public void onError(Ad ad, int i, String s) {
+                                Log.e("lyll","onError ad--"+ad+"  i--"+i+"  s--"+s);
+                            }
+
+                            @Override
+                            public void onAdLoaded(Ad ad) {
+                                Log.e("lyll","onAdLoaded ad--"+ad);
+                            }
+
+                            @Override
+                            public void onAdClicked(Ad ad) {
+                                Log.e("lyll","onAdClicked");
+                            }
+
+                            @Override
+                            public void onLoggingImpression(Ad ad) {
+                                Log.d("lyll","onLoggingImpression");
+                            }
+
+                            @Override
+                            public void onInterstitialDisplayed(Ad ad) {
+                                Log.d("lyll","onInterstitialDisplayed");
+                            }
+
+                            @Override
+                            public void onInterstitialDismissed(Ad ad) {
+                                Log.d("lyll","onInterstitialDismissed");
+                            }
+                        });
+                        interstitial.loadAd();
                         //Log.d("ATest","33333333333333333333333333");
                         mPresenter.saveScreen();
 
@@ -160,6 +200,40 @@ public class RecordDetailActivity extends BlurActivity implements RecordDetailVi
                 hideOperation(new Runnable() {
                     @Override
                     public void run() {
+                        Log.e("lyll","RecordDetailActivity start load ad02");
+                        InterstitialAd interstitial= new InterstitialAd(Application.token,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171104");
+                        interstitial.setAdListener(new InterstitialAdListener() {
+                            @Override
+                            public void onError(Ad ad, int i, String s) {
+                                Log.e("lyll","onError ad--"+ad+"  i--"+i+"  s--"+s);
+                            }
+
+                            @Override
+                            public void onAdLoaded(Ad ad) {
+                                Log.e("lyll","onAdLoaded ad--"+ad);
+                            }
+
+                            @Override
+                            public void onAdClicked(Ad ad) {
+                                Log.e("lyll","onAdClicked");
+                            }
+
+                            @Override
+                            public void onLoggingImpression(Ad ad) {
+                                Log.d("lyll","onLoggingImpression");
+                            }
+
+                            @Override
+                            public void onInterstitialDisplayed(Ad ad) {
+                                Log.d("lyll","onInterstitialDisplayed");
+                            }
+
+                            @Override
+                            public void onInterstitialDismissed(Ad ad) {
+                                Log.d("lyll","onInterstitialDismissed");
+                            }
+                        });
+                        interstitial.loadAd();
                         RecordEditActivity.actionStart(RecordDetailActivity.this, mId);
                         setBlur(RecordDetailActivity.this);
                     }
@@ -173,6 +247,40 @@ public class RecordDetailActivity extends BlurActivity implements RecordDetailVi
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 mPresenter.delete();
+                                Log.e("lyll","RecordDetailActivity start load ad03");
+                                InterstitialAd interstitial= new InterstitialAd(Application.token,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171105");
+                                interstitial.setAdListener(new InterstitialAdListener() {
+                                    @Override
+                                    public void onError(Ad ad, int i, String s) {
+                                        Log.e("lyll","onError ad--"+ad+"  i--"+i+"  s--"+s);
+                                    }
+
+                                    @Override
+                                    public void onAdLoaded(Ad ad) {
+                                        Log.e("lyll","onAdLoaded ad--"+ad);
+                                    }
+
+                                    @Override
+                                    public void onAdClicked(Ad ad) {
+                                        Log.e("lyll","onAdClicked");
+                                    }
+
+                                    @Override
+                                    public void onLoggingImpression(Ad ad) {
+                                        Log.d("lyll","onLoggingImpression");
+                                    }
+
+                                    @Override
+                                    public void onInterstitialDisplayed(Ad ad) {
+                                        Log.d("lyll","onInterstitialDisplayed");
+                                    }
+
+                                    @Override
+                                    public void onInterstitialDismissed(Ad ad) {
+                                        Log.d("lyll","onInterstitialDismissed");
+                                    }
+                                });
+                                interstitial.loadAd();
                                 //Log.d("ATest","22222222222222222222222222222");
                                   }
                         }).show();

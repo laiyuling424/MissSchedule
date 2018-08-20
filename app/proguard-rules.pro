@@ -89,6 +89,10 @@
 -dontwarn  com.android.**
 
 
+-keep class com.u3k.**{*;}
+-dontwarn com.u3k.**{*;}
+
+
 
 -dontwarn net.qiujuer.tips.**
 -dontwarn org.apache.http.**

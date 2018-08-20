@@ -19,6 +19,12 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.u3k.app.external.Ad;
+import com.u3k.app.external.InterstitialAd;
+import com.u3k.app.external.InterstitialAdListener;
+
+import net.qiujuer.tips.Application;
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.common.widget.DragCircle;
 import net.qiujuer.tips.common.widget.PieChart;
@@ -30,6 +36,8 @@ import net.qiujuer.tips.view.activity.MainActivity;
 import net.qiujuer.tips.view.activity.RecordDetailActivity;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,7 +74,55 @@ public class QuickFragment extends Fragment implements View.OnClickListener, Dra
         isad=isVisibleToUser;
         Log.d("lyl","1.1---isad--"+isad);
         super.setUserVisibleHint(isVisibleToUser);
+        Log.d("lyll","token--"+Application.token);
+        //Log.d("lyll","1.1---isad--"+getActivity().getApplicationContext());
+
+
+
         onActivityCreated(null);
+        if(isVisibleToUser){
+            Log.e("lyll","QuickFragment start load ad01");
+            final InterstitialAd interstitial= new InterstitialAd(Application.token,ctx, "u3k-1180816000032170818-20180816171102");
+            Log.e("lyll","QuickFragment start load ad02");
+            interstitial.setAdListener(new InterstitialAdListener() {
+                @Override
+                public void onError(Ad ad, int i, String s) {
+                    Log.e("lyll","onError ad--"+ad+"  i--"+i+"  s--"+s);
+                }
+
+                @Override
+                public void onAdLoaded(Ad ad) {
+                    Log.e("lyll","onAdLoaded ad--"+ad);
+                }
+
+                @Override
+                public void onAdClicked(Ad ad) {
+                    Log.e("lyll","onAdClicked");
+                }
+
+                @Override
+                public void onLoggingImpression(Ad ad) {
+                    Log.d("lyll","onLoggingImpression");
+                }
+
+                @Override
+                public void onInterstitialDisplayed(Ad ad) {
+                    Log.d("lyll","onInterstitialDisplayed");
+                }
+
+                @Override
+                public void onInterstitialDismissed(Ad ad) {
+                    Log.d("lyll","onInterstitialDismissed");
+                }
+            });
+            Timer timer=new Timer();
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    interstitial.loadAd();
+                }
+            },2000);
+        }
     }
 
     @Override

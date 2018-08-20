@@ -14,6 +14,12 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.u3k.app.external.Ad;
+import com.u3k.app.external.InterstitialAd;
+import com.u3k.app.external.InterstitialAdListener;
+
+import net.qiujuer.tips.Application;
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.view.activity.MainActivity;
 import net.qiujuer.tips.view.activity.RecordDetailActivity;
@@ -60,6 +66,42 @@ public class RecordsFragment extends Fragment implements AdapterSelectCallback {
         //Log.d("lyll","111");
         super.setUserVisibleHint(isVisibleToUser);
         onActivityCreated(null);
+        if(isVisibleToUser){
+            Log.e("lyll","RecordsFragment start load ad");
+            InterstitialAd interstitial= new InterstitialAd(Application.token,getActivity().getApplicationContext(), "u3k-1180816000032170818-20180816171102");
+            interstitial.setAdListener(new InterstitialAdListener() {
+                @Override
+                public void onError(Ad ad, int i, String s) {
+                    Log.e("lyll","onError ad--"+ad+"  i--"+i+"  s--"+s);
+                }
+
+                @Override
+                public void onAdLoaded(Ad ad) {
+                    Log.e("lyll","onAdLoaded ad--"+ad);
+                }
+
+                @Override
+                public void onAdClicked(Ad ad) {
+                    Log.e("lyll","onAdClicked");
+                }
+
+                @Override
+                public void onLoggingImpression(Ad ad) {
+                    Log.d("lyll","onLoggingImpression");
+                }
+
+                @Override
+                public void onInterstitialDisplayed(Ad ad) {
+                    Log.d("lyll","onInterstitialDisplayed");
+                }
+
+                @Override
+                public void onInterstitialDismissed(Ad ad) {
+                    Log.d("lyll","onInterstitialDismissed");
+                }
+            });
+            interstitial.loadAd();
+        }
     }
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

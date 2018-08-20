@@ -4,7 +4,6 @@ apply plugin: 'u3kbuild'
 
 android {
     compileSdkVersion ANDROID_BUILD_SDK_VERSION as int
-    buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
     lintOptions {
         checkReleaseBuilds false
         // Or, if you prefer, you can continue to check for errors in release builds,
@@ -21,7 +20,7 @@ android {
     buildTypes {
         release {
             zipAlignEnabled true
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
@@ -43,6 +42,7 @@ android {
     */
     productFlavors {
     }
+    buildToolsVersion '27.0.3'
 }
 
 repositories {
@@ -62,7 +62,7 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':common')
     compile project(':factory')
-    compile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+    //compile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
     compile "com.android.support:support-v13:$rootProject.ext.supportLibraryVersion"
     compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
@@ -76,6 +76,12 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
     //compile 'com.google.android.gms:play-services-analytics:10.0.1'
     //compile 'com.google.firebase:firebase-core:10.0.1'
+
+
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.google.android.gms:play-services-ads:10.0.1'
+
+    //implementation fileTree(include: ['*.jar'], dir: 'libs')
     compile files('libs/u3ksdk.jar')
 
 }
@@ -83,6 +89,5 @@ repositories {
     mavenCentral()
 }
 
-
-
 //apply plugin: 'com.google.gms.google-services'
+

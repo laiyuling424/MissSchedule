@@ -3,6 +3,7 @@ package net.qiujuer.tips;
 
 import android.app.Activity;
 
+
 import com.u3k.app.SdkMain;
 
 import net.qiujuer.tips.factory.cache.Cache;
@@ -22,7 +23,7 @@ public class Application extends android.app.Application {
     public void onCreate() {
         super.onCreate();
 
-        //token= SdkMain.init(getApplicationContext(), "1180816000032170818", "dabaicai2018817");
+        token= SdkMain.init(getApplicationContext(), "1180816000032170818", "dabaicai2018817");
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("fonts/FZLanTingHeiS-L-GB-Regular.TTF")
                 .setFontAttrId(R.attr.fontPath)
