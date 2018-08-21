@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.StringRes;
@@ -57,6 +58,10 @@ public class MainActivity extends BaseActivity implements ProductView, Toolbar.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences sp=getSharedPreferences("lyl", Context.MODE_PRIVATE);
+        Boolean isfb=sp.getBoolean("isfb",false);
+        //Log.d("lylll","isfb--"+sp.getBoolean("isfb",false));
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         //mToolbar.setNavigationIcon(R.mipmap.ic_nav_main);

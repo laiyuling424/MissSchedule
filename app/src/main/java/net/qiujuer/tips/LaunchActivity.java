@@ -2,6 +2,7 @@ package net.qiujuer.tips;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,12 +31,20 @@ public class LaunchActivity extends BaseActivity {
     private int mDoneCount = 0;
     private boolean mAlreadySkip = false;
     private LinearLayout contentAdView;
+    private SharedPreferences sp;
+    private SharedPreferences.Editor edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
 
+        sp=getSharedPreferences("lyl", Context.MODE_PRIVATE);
+        edit= sp.edit();
+        edit.putBoolean("isfb",false);
+        edit.commit();
+
+        isfb();
         iconIn();
 
         Thread thread = new Thread("GraveTips-Launch-InitThread") {
@@ -48,6 +57,24 @@ public class LaunchActivity extends BaseActivity {
         };
         thread.setDaemon(true);
         thread.start();
+    }
+    public void isfb(){
+        Intent intent=getIntent();
+        if(intent.getDataString()==null){
+
+        }else {
+//            android:host="firstnotes"
+//            android:scheme="@string/fb_login_protocol_scheme"/>
+            String scheme=intent.getScheme();
+            String action=intent.getAction();
+            String a=intent.getDataString();
+            //Log.d("lylll","scheme--"+scheme+"  action--"+action+"  data--"+a);
+            if("cabbage://firstnotes".equals(a)){
+                edit.putBoolean("isfb",true);
+                edit.commit();
+                //Log.d("lylll","isfb--"+sp.getBoolean("isfb--",false));
+            }
+        }
     }
 
     private void iconIn() {
