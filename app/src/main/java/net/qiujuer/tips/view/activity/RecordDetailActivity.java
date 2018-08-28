@@ -27,6 +27,7 @@ import com.u3k.app.external.InterstitialAd;
 import com.u3k.app.external.InterstitialAdListener;
 
 import net.qiujuer.tips.Application;
+import net.qiujuer.tips.LaunchActivity;
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.common.drawable.AnimJagDrawable;
 import net.qiujuer.tips.common.widget.SimpleDateView;
@@ -157,7 +158,7 @@ public class RecordDetailActivity extends BlurActivity implements RecordDetailVi
                     @Override
                     public void run() {
                         Log.e("lyll","RecordDetailActivity start load ad01");
-                        InterstitialAd interstitial= new InterstitialAd(Application.token,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171106");
+                        InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171106");
                         interstitial.setAdListener(new InterstitialAdListener() {
                             @Override
                             public void onError(Ad ad, int i, String s) {
@@ -201,7 +202,7 @@ public class RecordDetailActivity extends BlurActivity implements RecordDetailVi
                     @Override
                     public void run() {
                         Log.e("lyll","RecordDetailActivity start load ad02");
-                        InterstitialAd interstitial= new InterstitialAd(Application.token,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171104");
+                        InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171104");
                         interstitial.setAdListener(new InterstitialAdListener() {
                             @Override
                             public void onError(Ad ad, int i, String s) {
@@ -248,7 +249,7 @@ public class RecordDetailActivity extends BlurActivity implements RecordDetailVi
                             public void onClick(DialogInterface dialog, int which) {
                                 mPresenter.delete();
                                 Log.e("lyll","RecordDetailActivity start load ad03");
-                                InterstitialAd interstitial= new InterstitialAd(Application.token,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171105");
+                                InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171105");
                                 interstitial.setAdListener(new InterstitialAdListener() {
                                     @Override
                                     public void onError(Ad ad, int i, String s) {

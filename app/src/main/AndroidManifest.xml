@@ -6,6 +6,9 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+
+
     <uses-permission android:name="android.permission.GET_TASKS"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
@@ -136,6 +139,8 @@
         <activity android:name=".view.activity.SpreadActivity">
         </activity>
 
+
+        <!--facebook start-->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"/>
@@ -144,6 +149,7 @@
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"/>
+        <!---->
         <activity
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">
@@ -158,19 +164,29 @@
                     android:scheme="@string/fb_login_protocol_scheme"/>
             </intent-filter>
         </activity>
-
+        <!--u3k sdk start-->
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="10084000"
+            android:value="10084000 "
             tools:replace="android:value"/>
-
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
+        <activity android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
             android:taskAffinity=":sdk"
-            android:theme="@android:style/Theme.Translucent"/>
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!--google analytics start-->
+        <receiver android:name="com.google.android.gms.analytics.CampaignTrackingReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"
+            android:enabled="true"
+            android:exported="false" />
 
     </application>
 

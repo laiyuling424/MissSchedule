@@ -111,7 +111,12 @@ public class BackgroundActivity extends AppCompatActivity {
         View view = activity.getWindow().getDecorView();
         view.setDrawingCacheEnabled(true);
 
+        view.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+        view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+        view.buildDrawingCache();
         Bitmap bitmap = view.getDrawingCache();
+
+        //Bitmap bitmap = view.getDrawingCache();
 
         int statusBarHeight = 0;
 
@@ -127,8 +132,7 @@ public class BackgroundActivity extends AppCompatActivity {
             Matrix matrix = new Matrix();
             matrix.postScale(1.0f / SCALE_FACTOR, 1.0f / SCALE_FACTOR);
             // New Compress bitmap
-            bitmap = Bitmap.createBitmap(bitmap, 0, statusBarHeight,
-                    bitmap.getWidth(), bitmap.getHeight() - statusBarHeight, matrix, true);
+            bitmap = Bitmap.createBitmap(bitmap, 0, statusBarHeight,bitmap.getWidth(), bitmap.getHeight() - statusBarHeight, matrix, true);
         } else {
             bitmap = Bitmap.createBitmap(bitmap, 0, statusBarHeight, bitmap.getWidth(),
                     bitmap.getHeight() - statusBarHeight);

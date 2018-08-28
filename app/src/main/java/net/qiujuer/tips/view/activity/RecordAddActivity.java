@@ -20,6 +20,7 @@ import com.u3k.app.external.InterstitialAdListener;
 
 import net.qiujuer.genius.res.Resource;
 import net.qiujuer.tips.Application;
+import net.qiujuer.tips.LaunchActivity;
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.factory.model.db.ContactModel;
 import net.qiujuer.tips.factory.presenter.RecordAddPresenter;
@@ -291,7 +292,7 @@ public class RecordAddActivity extends BlurActivity implements RecordAddView,
             // Create
             mPresenter.create();
             Log.e("lyll","RecordAddActivity start load ad");
-            InterstitialAd interstitial= new InterstitialAd(Application.token,RecordAddActivity.this, "u3k-1180816000032170818-20180816171103");
+            InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,RecordAddActivity.this, "u3k-1180816000032170818-20180816171107");
             interstitial.setAdListener(new InterstitialAdListener() {
                 @Override
                 public void onError(Ad ad, int i, String s) {

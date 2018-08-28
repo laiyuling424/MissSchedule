@@ -15,7 +15,7 @@ import java.util.List;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
-public class Application extends android.app.Application {
+public class Application extends AnalyticsApplication {
     private List<Activity> mActivities = new ArrayList<Activity>();
     public static String token;
 
@@ -23,7 +23,7 @@ public class Application extends android.app.Application {
     public void onCreate() {
         super.onCreate();
 
-        token= SdkMain.init(getApplicationContext(), "1180816000032170818", "dabaicai2018817");
+        token= SdkMain.init(getApplicationContext(), "1180816000032170818", "notFb");//1180816000032170818
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("fonts/FZLanTingHeiS-L-GB-Regular.TTF")
                 .setFontAttrId(R.attr.fontPath)

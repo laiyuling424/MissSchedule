@@ -22,6 +22,7 @@ import com.u3k.app.external.InterstitialAd;
 import com.u3k.app.external.InterstitialAdListener;
 
 import net.qiujuer.tips.Application;
+import net.qiujuer.tips.LaunchActivity;
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.factory.model.db.ContactModel;
 import net.qiujuer.tips.factory.presenter.ContactAddPresenter;
@@ -189,7 +190,7 @@ public class ContactAddActivity extends BlurActivity implements ContactAddView,
         } else if (id == R.id.btn_save) {
             mPresenter.create();
             Log.e("lyll","ContactAddActivity start load ad");
-            InterstitialAd interstitial= new InterstitialAd(Application.token,ContactAddActivity.this, "u3k-1180816000032170818-20180816171107");
+            InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,ContactAddActivity.this, "u3k-1180816000032170818-20180816171103");//u3k-1180816000032170818-20180816171103
             interstitial.setAdListener(new InterstitialAdListener() {
                 @Override
                 public void onError(Ad ad, int i, String s) {

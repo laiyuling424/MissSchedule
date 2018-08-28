@@ -21,6 +21,7 @@ import com.u3k.app.external.InterstitialAdListener;
 
 import net.qiujuer.genius.ui.widget.FloatActionButton;
 import net.qiujuer.tips.Application;
+import net.qiujuer.tips.LaunchActivity;
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.common.drawable.AnimJagDrawable;
 import net.qiujuer.tips.factory.cache.Cache;
@@ -239,7 +240,7 @@ public class ContactDetailActivity extends BlurActivity implements ContactDetail
             ContactEditActivity.actionStart(ContactDetailActivity.this, mId);
             setBlur(ContactDetailActivity.this);
             Log.e("lyll","ContactDetailActivity start load ad");
-            InterstitialAd interstitial= new InterstitialAd(Application.token,ContactDetailActivity.this, "u3k-1180816000032170818-20180816171102");
+            InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,ContactDetailActivity.this, "u3k-1180816000032170818-20180816171108");
             interstitial.setAdListener(new InterstitialAdListener() {
                 @Override
                 public void onError(Ad ad, int i, String s) {

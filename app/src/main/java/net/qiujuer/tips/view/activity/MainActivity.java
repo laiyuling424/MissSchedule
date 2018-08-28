@@ -27,8 +27,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import net.qiujuer.genius.ui.widget.ImageView;
 import net.qiujuer.genius.ui.widget.Loading;
+import net.qiujuer.tips.AnalyticsApplication;
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.factory.model.api.ProductVersionModel;
 import net.qiujuer.tips.factory.presenter.ProductPresenter;
@@ -53,6 +57,7 @@ public class MainActivity extends BaseActivity implements ProductView, Toolbar.O
     private SectionsPagerAdapter mAdapter;
     private View mCreate;
     private int mCreateTranslationY;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,11 +89,19 @@ public class MainActivity extends BaseActivity implements ProductView, Toolbar.O
 
         // Get the Create button Translation 56+16+8 dp
         mCreateTranslationY = (int) (getResources().getDisplayMetrics().density * 80);
+
+
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        //Log.i("lyll", "Setting screen name: " + name);
+        mTracker.setScreenName("Image~MainActivity");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
 //    private void initSyncItem() {
@@ -281,7 +294,7 @@ public class MainActivity extends BaseActivity implements ProductView, Toolbar.O
 
         @Override
         public void onPageSelected(int position) {
-            Log.d("lyl","position=="+position);
+            //Log.d("lyl","position=="+position);
             /*
             if (position == 0) {
                 mCreate.animate()

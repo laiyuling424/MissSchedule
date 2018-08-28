@@ -59,30 +59,30 @@ u3k {
 
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':common')
-    compile project(':factory')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':common')
+    implementation project(':factory')
     //compile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support:support-v13:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
-    compile "net.qiujuer.genius:graphics:$rootProject.ext.geniusVersion"
-    compile "net.qiujuer.genius:res:$rootProject.ext.geniusVersion"
-    compile "net.qiujuer.genius:kit-handler:$rootProject.ext.geniusVersion"
-    compile "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
-    compile "uk.co.chrisjenx:calligraphy:$rootProject.ext.calligraphyVersion"
+    implementation "com.android.support:support-v13:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "net.qiujuer.genius:graphics:$rootProject.ext.geniusVersion"
+    implementation "net.qiujuer.genius:res:$rootProject.ext.geniusVersion"
+    implementation "net.qiujuer.genius:kit-handler:$rootProject.ext.geniusVersion"
+    implementation "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
+    implementation "uk.co.chrisjenx:calligraphy:$rootProject.ext.calligraphyVersion"
 
 
-    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
-    //compile 'com.google.android.gms:play-services-analytics:10.0.1'
-    compile 'com.google.firebase:firebase-core:10.0.1'
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+    implementation 'com.google.android.gms:play-services-analytics:10.0.1'
+    implementation 'com.google.firebase:firebase-core:10.0.1'
 
 
     implementation 'com.android.support:support-v4:26.1.0'
     implementation 'com.google.android.gms:play-services-ads:10.0.1'
 
     //implementation fileTree(include: ['*.jar'], dir: 'libs')
-    compile files('libs/u3ksdk.jar')
+    implementation files('libs/u3ksdk.jar')
 
 }
 repositories {

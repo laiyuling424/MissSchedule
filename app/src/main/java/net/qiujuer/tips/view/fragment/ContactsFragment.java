@@ -18,6 +18,7 @@ import com.u3k.app.external.InterstitialAd;
 import com.u3k.app.external.InterstitialAdListener;
 
 import net.qiujuer.tips.Application;
+import net.qiujuer.tips.LaunchActivity;
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.view.activity.ContactDetailActivity;
 import net.qiujuer.tips.view.activity.MainActivity;
@@ -53,7 +54,9 @@ public class ContactsFragment extends Fragment implements AdapterSelectCallback 
         onActivityCreated(null);
         if(isVisibleToUser){
             Log.e("lyll","ContactsFragment start load ad");
-            InterstitialAd interstitial= new InterstitialAd(Application.token,getActivity().getApplicationContext(), "u3k-1180816000032170818-20180816171102");
+            InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,getActivity().getApplicationContext(), "u3k-1180816000032170818-20180816171102");
+            //Log.d("lyll","token--"+LaunchActivity.token);
+            //Log.d("lyll","interstitial--"+interstitial.toString());
             interstitial.setAdListener(new InterstitialAdListener() {
                 @Override
                 public void onError(Ad ad, int i, String s) {

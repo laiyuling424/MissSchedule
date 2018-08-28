@@ -20,6 +20,7 @@ import com.u3k.app.external.InterstitialAd;
 import com.u3k.app.external.InterstitialAdListener;
 
 import net.qiujuer.tips.Application;
+import net.qiujuer.tips.LaunchActivity;
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.view.activity.MainActivity;
 import net.qiujuer.tips.view.activity.RecordDetailActivity;
@@ -51,7 +52,7 @@ public class RecordsFragment extends Fragment implements AdapterSelectCallback {
 
     @Override
     public void onResume() {
-        Log.d("lyll","444");
+        //Log.d("lyll","444");
 /*        Intent intent=getActivity().getIntent();
         String data=intent.getStringExtra("isShow");
         Log.d("lyl","data--"+data);*/
@@ -68,7 +69,9 @@ public class RecordsFragment extends Fragment implements AdapterSelectCallback {
         onActivityCreated(null);
         if(isVisibleToUser){
             Log.e("lyll","RecordsFragment start load ad");
-            InterstitialAd interstitial= new InterstitialAd(Application.token,getActivity().getApplicationContext(), "u3k-1180816000032170818-20180816171102");
+            InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,getActivity().getApplicationContext(), "u3k-1180816000032170818-20180816171102");//u3k-1180816000032170818-20180816171102
+            //Log.d("lyll","token--"+LaunchActivity.token);
+            //Log.d("lyll","interstitial--"+interstitial.toString());
             interstitial.setAdListener(new InterstitialAdListener() {
                 @Override
                 public void onError(Ad ad, int i, String s) {
@@ -106,8 +109,8 @@ public class RecordsFragment extends Fragment implements AdapterSelectCallback {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Log.d("lyll","333");
-        Log.d("lyl","2.2--isad--"+isad);
+        //Log.d("lyll","333");
+        //Log.d("lyl","2.2--isad--"+isad);
 
 
     }

@@ -25,6 +25,7 @@ import com.u3k.app.external.InterstitialAd;
 import com.u3k.app.external.InterstitialAdListener;
 
 import net.qiujuer.tips.Application;
+import net.qiujuer.tips.LaunchActivity;
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.common.widget.DragCircle;
 import net.qiujuer.tips.common.widget.PieChart;
@@ -72,18 +73,18 @@ public class QuickFragment extends Fragment implements View.OnClickListener, Dra
     public void setUserVisibleHint(boolean isVisibleToUser) {
         //Log.d("lyl","1----"+isVisibleToUser);
         isad=isVisibleToUser;
-        Log.d("lyl","1.1---isad--"+isad);
+        //Log.d("lyl","1.1---isad--"+isad);
         super.setUserVisibleHint(isVisibleToUser);
-        Log.d("lyll","token--"+Application.token);
-        //Log.d("lyll","1.1---isad--"+getActivity().getApplicationContext());
+        //Log.d("lyll","token--"+Application.token);
 
 
 
         onActivityCreated(null);
         if(isVisibleToUser){
             Log.e("lyll","QuickFragment start load ad01");
-            final InterstitialAd interstitial= new InterstitialAd(Application.token,ctx, "u3k-1180816000032170818-20180816171102");
-            Log.e("lyll","QuickFragment start load ad02");
+            final InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,ctx, "u3k-1180816000032170818-20180816171102");//u3k-1180816000032170818-20180816171102
+            //Log.d("lyll","token--"+LaunchActivity.token);
+            //Log.d("lyll","interstitial--"+interstitial.toString());
             interstitial.setAdListener(new InterstitialAdListener() {
                 @Override
                 public void onError(Ad ad, int i, String s) {
@@ -128,7 +129,7 @@ public class QuickFragment extends Fragment implements View.OnClickListener, Dra
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Log.d("lyl","1.2---isad--"+isad);
+        //Log.d("lyl","1.2---isad--"+isad);
     }
     @SuppressLint("CutPasteId")
     private void initTop(View view) {

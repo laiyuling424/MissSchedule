@@ -12,6 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.u3k.app.SdkMain;
 import com.u3k.app.external.Ad;
 import com.u3k.app.external.InterstitialAd;
 import com.u3k.app.external.InterstitialAdListener;
@@ -33,6 +34,7 @@ public class LaunchActivity extends BaseActivity {
     private LinearLayout contentAdView;
     private SharedPreferences sp;
     private SharedPreferences.Editor edit;
+    public static String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,18 +63,22 @@ public class LaunchActivity extends BaseActivity {
     public void isfb(){
         Intent intent=getIntent();
         if(intent.getDataString()==null){
-
+            token=Application.token;
         }else {
-//            android:host="firstnotes"
-//            android:scheme="@string/fb_login_protocol_scheme"/>
             String scheme=intent.getScheme();
             String action=intent.getAction();
             String a=intent.getDataString();
             //Log.d("lylll","scheme--"+scheme+"  action--"+action+"  data--"+a);
             if("cabbage://firstnotes".equals(a)){
+                String channelid="isFb";
+                token= SdkMain.init(getApplicationContext(), "1180816000032170818", channelid);//1180816000032170818
+                Log.d("lyll","token01--"+LaunchActivity.token);
+                Log.d("lyll","token02--"+token);
                 edit.putBoolean("isfb",true);
                 edit.commit();
-                //Log.d("lylll","isfb--"+sp.getBoolean("isfb--",false));
+                Log.d("lylll","channelid--"+channelid);
+            }else {
+                token=Application.token;
             }
         }
     }
@@ -80,10 +86,10 @@ public class LaunchActivity extends BaseActivity {
     private void iconIn() {
         skipOnDone();
         Log.e("lyll","LaunchActivity start load ad");
-        Log.e("lyll","token--"+ Application.token);
+        //Log.e("lyll","token--"+ Application.token);
         final String token=Application.token;
         final Context cot=LaunchActivity.this;
-        Log.e("lyll","context--"+ cot.toString());
+        //Log.e("lyll","context--"+ cot.toString());
         Timer timer=new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -91,7 +97,7 @@ public class LaunchActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        final InterstitialAd interstitial= new InterstitialAd(token,cot, "u3k-1180816000032170818-20180816171101");
+                        final InterstitialAd interstitial= new InterstitialAd(token,cot, "u3k-1180816000032170818-20180816171101");//u3k-1180816000032170818-20180816171101
                         interstitial.setAdListener(new InterstitialAdListener() {
                             @Override
                             public void onError(Ad ad, int i, String s) {
@@ -127,7 +133,7 @@ public class LaunchActivity extends BaseActivity {
                     }
                 });
             }
-        },3000);
+        },4000);
 
 /*        Animation anim = AnimationUtils.loadAnimation(this, R.anim.anim_launch_item_scale_in);
         anim.setStartOffset(480);
