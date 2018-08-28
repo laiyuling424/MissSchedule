@@ -82,9 +82,7 @@ public class LaunchActivity extends BaseActivity {
         Log.e("lyll","LaunchActivity start load ad");
         Log.e("lyll","token--"+ Application.token);
         final String token=Application.token;
-        final Context context=getApplicationContext();
         final Context cot=LaunchActivity.this;
-        Log.e("lyll","context--"+ context.toString());
         Log.e("lyll","context--"+ cot.toString());
         Timer timer=new Timer();
         timer.schedule(new TimerTask() {
