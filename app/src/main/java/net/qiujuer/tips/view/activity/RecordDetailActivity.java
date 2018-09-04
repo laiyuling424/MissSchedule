@@ -57,6 +57,10 @@ public class RecordDetailActivity extends BlurActivity implements RecordDetailVi
     private SimpleDateView mSimpleDate;
     private TextView mLunar;
     private TextView mDate;
+<<<<<<< HEAD
+    private InterstitialAd interstitial;
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 
     private LinearLayout contentAdView;
 
@@ -158,7 +162,11 @@ public class RecordDetailActivity extends BlurActivity implements RecordDetailVi
                     @Override
                     public void run() {
                         Log.e("lyll","RecordDetailActivity start load ad01");
+<<<<<<< HEAD
+                        interstitial= new InterstitialAd(LaunchActivity.mAppIdKey,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171102");
+=======
                         InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171106");
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
                         interstitial.setAdListener(new InterstitialAdListener() {
                             @Override
                             public void onError(Ad ad, int i, String s) {
@@ -168,6 +176,11 @@ public class RecordDetailActivity extends BlurActivity implements RecordDetailVi
                             @Override
                             public void onAdLoaded(Ad ad) {
                                 Log.e("lyll","onAdLoaded ad--"+ad);
+<<<<<<< HEAD
+                                interstitial.show();
+                                Log.e("lyll","onAdLoaded ad show--"+interstitial.show());
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
                             }
 
                             @Override
@@ -202,7 +215,11 @@ public class RecordDetailActivity extends BlurActivity implements RecordDetailVi
                     @Override
                     public void run() {
                         Log.e("lyll","RecordDetailActivity start load ad02");
+<<<<<<< HEAD
+                        interstitial= new InterstitialAd(LaunchActivity.mAppIdKey,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171102");
+=======
                         InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171104");
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
                         interstitial.setAdListener(new InterstitialAdListener() {
                             @Override
                             public void onError(Ad ad, int i, String s) {
@@ -212,6 +229,11 @@ public class RecordDetailActivity extends BlurActivity implements RecordDetailVi
                             @Override
                             public void onAdLoaded(Ad ad) {
                                 Log.e("lyll","onAdLoaded ad--"+ad);
+<<<<<<< HEAD
+                                interstitial.show();
+                                Log.e("lyll","onAdLoaded ad show--"+interstitial.show());
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
                             }
 
                             @Override
@@ -249,7 +271,11 @@ public class RecordDetailActivity extends BlurActivity implements RecordDetailVi
                             public void onClick(DialogInterface dialog, int which) {
                                 mPresenter.delete();
                                 Log.e("lyll","RecordDetailActivity start load ad03");
+<<<<<<< HEAD
+                                interstitial= new InterstitialAd(LaunchActivity.mAppIdKey,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171102");
+=======
                                 InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,RecordDetailActivity.this, "u3k-1180816000032170818-20180816171105");
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
                                 interstitial.setAdListener(new InterstitialAdListener() {
                                     @Override
                                     public void onError(Ad ad, int i, String s) {
@@ -259,6 +285,11 @@ public class RecordDetailActivity extends BlurActivity implements RecordDetailVi
                                     @Override
                                     public void onAdLoaded(Ad ad) {
                                         Log.e("lyll","onAdLoaded ad--"+ad);
+<<<<<<< HEAD
+                                        interstitial.show();
+                                        Log.e("lyll","onAdLoaded ad show--"+interstitial.show());
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
                                     }
 
                                     @Override

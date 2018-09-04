@@ -15,15 +15,26 @@ import java.util.List;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
+<<<<<<< HEAD
+public class Application extends android.app.Application {
+    private List<Activity> mActivities = new ArrayList<Activity>();
+    public static String mAppIdKey;
+=======
 public class Application extends AnalyticsApplication {
     private List<Activity> mActivities = new ArrayList<Activity>();
     public static String token;
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 
     @Override
     public void onCreate() {
         super.onCreate();
+<<<<<<< HEAD
+        mAppIdKey = SdkMain.init(this, "1180816000032170818", "notFb");
+
+=======
 
         token= SdkMain.init(getApplicationContext(), "1180816000032170818", "notFb");//1180816000032170818
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("fonts/FZLanTingHeiS-L-GB-Regular.TTF")
                 .setFontAttrId(R.attr.fontPath)

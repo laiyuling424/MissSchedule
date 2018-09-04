@@ -27,12 +27,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
+import net.qiujuer.genius.ui.widget.ImageView;
+import net.qiujuer.genius.ui.widget.Loading;
+=======
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
 import net.qiujuer.genius.ui.widget.ImageView;
 import net.qiujuer.genius.ui.widget.Loading;
 import net.qiujuer.tips.AnalyticsApplication;
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 import net.qiujuer.tips.R;
 import net.qiujuer.tips.factory.model.api.ProductVersionModel;
 import net.qiujuer.tips.factory.presenter.ProductPresenter;
@@ -57,7 +62,10 @@ public class MainActivity extends BaseActivity implements ProductView, Toolbar.O
     private SectionsPagerAdapter mAdapter;
     private View mCreate;
     private int mCreateTranslationY;
+<<<<<<< HEAD
+=======
     private Tracker mTracker;
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,19 +97,25 @@ public class MainActivity extends BaseActivity implements ProductView, Toolbar.O
 
         // Get the Create button Translation 56+16+8 dp
         mCreateTranslationY = (int) (getResources().getDisplayMetrics().density * 80);
+<<<<<<< HEAD
+=======
 
 
         // Obtain the shared Tracker instance.
         AnalyticsApplication application = (AnalyticsApplication) getApplication();
         mTracker = application.getDefaultTracker();
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+<<<<<<< HEAD
+=======
         //Log.i("lyll", "Setting screen name: " + name);
         mTracker.setScreenName("Image~MainActivity");
         mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
     }
 
 //    private void initSyncItem() {
@@ -294,7 +308,11 @@ public class MainActivity extends BaseActivity implements ProductView, Toolbar.O
 
         @Override
         public void onPageSelected(int position) {
+<<<<<<< HEAD
+            Log.d("lyl","position=="+position);
+=======
             //Log.d("lyl","position=="+position);
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
             /*
             if (position == 0) {
                 mCreate.animate()

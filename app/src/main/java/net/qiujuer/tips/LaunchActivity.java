@@ -12,6 +12,10 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 import com.u3k.app.SdkMain;
 import com.u3k.app.external.Ad;
 import com.u3k.app.external.InterstitialAd;
@@ -34,7 +38,12 @@ public class LaunchActivity extends BaseActivity {
     private LinearLayout contentAdView;
     private SharedPreferences sp;
     private SharedPreferences.Editor edit;
+<<<<<<< HEAD
+    private InterstitialAd interstitial;
+    public static String mAppIdKey;
+=======
     public static String token;
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +72,11 @@ public class LaunchActivity extends BaseActivity {
     public void isfb(){
         Intent intent=getIntent();
         if(intent.getDataString()==null){
+<<<<<<< HEAD
+            mAppIdKey=Application.mAppIdKey;
+=======
             token=Application.token;
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
         }else {
             String scheme=intent.getScheme();
             String action=intent.getAction();
@@ -71,6 +84,16 @@ public class LaunchActivity extends BaseActivity {
             //Log.d("lylll","scheme--"+scheme+"  action--"+action+"  data--"+a);
             if("cabbage://firstnotes".equals(a)){
                 String channelid="isFb";
+<<<<<<< HEAD
+                mAppIdKey= SdkMain.init(getApplicationContext(), "1180816000032170818", channelid);//1180816000032170818
+                //Log.d("lyll","token01--"+LaunchActivity.mAppIdKey);
+                //Log.d("lyll","token02--"+mAppIdKey);
+                edit.putBoolean("isfb",true);
+                edit.commit();
+                //Log.d("lylll","channelid--"+channelid);
+            }else {
+                mAppIdKey=Application.mAppIdKey;
+=======
                 token= SdkMain.init(getApplicationContext(), "1180816000032170818", channelid);//1180816000032170818
                 Log.d("lyll","token01--"+LaunchActivity.token);
                 Log.d("lyll","token02--"+token);
@@ -79,17 +102,23 @@ public class LaunchActivity extends BaseActivity {
                 Log.d("lylll","channelid--"+channelid);
             }else {
                 token=Application.token;
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
             }
         }
     }
 
     private void iconIn() {
+<<<<<<< HEAD
+        Log.e("lyll","LaunchActivity start load ad");
+        skipOnDone();
+=======
         skipOnDone();
         Log.e("lyll","LaunchActivity start load ad");
         //Log.e("lyll","token--"+ Application.token);
         final String token=Application.token;
         final Context cot=LaunchActivity.this;
         //Log.e("lyll","context--"+ cot.toString());
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
         Timer timer=new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -97,7 +126,11 @@ public class LaunchActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+<<<<<<< HEAD
+                        interstitial= new InterstitialAd(Application.mAppIdKey,LaunchActivity.this, "u3k-1180816000032170818-20180816171101");
+=======
                         final InterstitialAd interstitial= new InterstitialAd(token,cot, "u3k-1180816000032170818-20180816171101");//u3k-1180816000032170818-20180816171101
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
                         interstitial.setAdListener(new InterstitialAdListener() {
                             @Override
                             public void onError(Ad ad, int i, String s) {
@@ -107,6 +140,11 @@ public class LaunchActivity extends BaseActivity {
                             @Override
                             public void onAdLoaded(Ad ad) {
                                 Log.e("lyll","onAdLoaded ad--"+ad);
+<<<<<<< HEAD
+                                interstitial.show();
+                                Log.e("lyll","onAdLoaded ad show--"+interstitial.show());
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
                             }
 
                             @Override
@@ -134,7 +172,10 @@ public class LaunchActivity extends BaseActivity {
                 });
             }
         },4000);
+<<<<<<< HEAD
+=======
 
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 /*        Animation anim = AnimationUtils.loadAnimation(this, R.anim.anim_launch_item_scale_in);
         anim.setStartOffset(480);
         anim.setAnimationListener(new AnimationListener() {

@@ -7,6 +7,10 @@
     <versions>
       <version>1.0</version>
     </versions>
+<<<<<<< HEAD
+    <lastUpdated>20180830091823</lastUpdated>
+=======
     <lastUpdated>20180813111451</lastUpdated>
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
   </versioning>
 </metadata>

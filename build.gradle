@@ -3,16 +3,32 @@ buildscript {
         jcenter()
         google()
 
+<<<<<<< HEAD
+        mavenCentral()
+
         maven {
             url uri('./u3kbuild')
         }
+
+=======
+        maven {
+            url uri('./u3kbuild')
+        }
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
     }
     dependencies {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'com.android.tools.build:gradle:3.1.2'
+<<<<<<< HEAD
+
+        classpath 'com.google.gms:google-services:4.0.0'
+        classpath 'com.adflash.plugin:app:1.0'
+
+=======
         classpath 'com.google.gms:google-services:4.0.2'
 
         classpath 'com.adflash.plugin:app:1.0'
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
     }
 }
 

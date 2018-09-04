@@ -15,6 +15,10 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 import com.u3k.app.external.Ad;
 import com.u3k.app.external.InterstitialAd;
 import com.u3k.app.external.InterstitialAdListener;
@@ -34,6 +38,10 @@ public class RecordsFragment extends Fragment implements AdapterSelectCallback {
     private RecordsAdapter mAdapter;
     private LinearLayout contentAdView;
     private Boolean isad;
+<<<<<<< HEAD
+    private InterstitialAd interstitial;
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,10 +60,13 @@ public class RecordsFragment extends Fragment implements AdapterSelectCallback {
 
     @Override
     public void onResume() {
+<<<<<<< HEAD
+=======
         //Log.d("lyll","444");
 /*        Intent intent=getActivity().getIntent();
         String data=intent.getStringExtra("isShow");
         Log.d("lyl","data--"+data);*/
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
         super.onResume();
     }
 
@@ -69,9 +80,13 @@ public class RecordsFragment extends Fragment implements AdapterSelectCallback {
         onActivityCreated(null);
         if(isVisibleToUser){
             Log.e("lyll","RecordsFragment start load ad");
+<<<<<<< HEAD
+            interstitial= new InterstitialAd(LaunchActivity.mAppIdKey,getActivity().getApplicationContext(), "u3k-1180816000032170818-20180816171102");
+=======
             InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,getActivity().getApplicationContext(), "u3k-1180816000032170818-20180816171102");//u3k-1180816000032170818-20180816171102
             //Log.d("lyll","token--"+LaunchActivity.token);
             //Log.d("lyll","interstitial--"+interstitial.toString());
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
             interstitial.setAdListener(new InterstitialAdListener() {
                 @Override
                 public void onError(Ad ad, int i, String s) {
@@ -81,6 +96,11 @@ public class RecordsFragment extends Fragment implements AdapterSelectCallback {
                 @Override
                 public void onAdLoaded(Ad ad) {
                     Log.e("lyll","onAdLoaded ad--"+ad);
+<<<<<<< HEAD
+                    interstitial.show();
+                    Log.e("lyll","onAdLoaded ad show--"+interstitial.show());
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
                 }
 
                 @Override
@@ -105,6 +125,10 @@ public class RecordsFragment extends Fragment implements AdapterSelectCallback {
             });
             interstitial.loadAd();
         }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
     }
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

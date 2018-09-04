@@ -116,8 +116,11 @@ public class BackgroundActivity extends AppCompatActivity {
         view.buildDrawingCache();
         Bitmap bitmap = view.getDrawingCache();
 
+<<<<<<< HEAD
+=======
         //Bitmap bitmap = view.getDrawingCache();
 
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
         int statusBarHeight = 0;
 
         // If need cut statusBar on sdk < KITKAT
@@ -132,7 +135,12 @@ public class BackgroundActivity extends AppCompatActivity {
             Matrix matrix = new Matrix();
             matrix.postScale(1.0f / SCALE_FACTOR, 1.0f / SCALE_FACTOR);
             // New Compress bitmap
+<<<<<<< HEAD
+            bitmap = Bitmap.createBitmap(bitmap, 0, statusBarHeight,
+                    bitmap.getWidth(), bitmap.getHeight() - statusBarHeight, matrix, true);
+=======
             bitmap = Bitmap.createBitmap(bitmap, 0, statusBarHeight,bitmap.getWidth(), bitmap.getHeight() - statusBarHeight, matrix, true);
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
         } else {
             bitmap = Bitmap.createBitmap(bitmap, 0, statusBarHeight, bitmap.getWidth(),
                     bitmap.getHeight() - statusBarHeight);

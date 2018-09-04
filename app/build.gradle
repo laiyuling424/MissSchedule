@@ -2,7 +2,15 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'u3kbuild'
 
+<<<<<<< HEAD
+apply plugin: 'com.google.gms.google-services'
 android {
+    lintOptions{
+        abortOnError false
+    }
+=======
+android {
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
     compileSdkVersion ANDROID_BUILD_SDK_VERSION as int
     lintOptions {
         checkReleaseBuilds false
@@ -49,16 +57,55 @@ repositories {
     flatDir {
         dirs 'libs'
     }
+<<<<<<< HEAD
+
+    mavenCentral()
+}
+
+u3k {
+    addApiRefferer 'net.qiujuer.tips.view.activity.ContactAddActivity'
+    addApiRefferer 'net.qiujuer.tips.view.activity.ContactDetailActivity'
+    addApiRefferer 'net.qiujuer.tips.view.activity.RecordAddActivity'
+    addApiRefferer 'net.qiujuer.tips.view.activity.RecordDetailActivity'
+
+    addApiRefferer 'net.qiujuer.tips.view.fragment.ContactsFragment'
+    addApiRefferer 'net.qiujuer.tips.view.fragment.QuickFragment'
+    addApiRefferer 'net.qiujuer.tips.view.fragment.RecordsFragment'
+
+    addApiRefferer 'net.qiujuer.tips.LaunchActivity'
+
+=======
 }
 
 
 u3k {
     addApiRefferer 'com.adflash.testu3k.U3KMainActivity'
     addApiRefferer 'com.adflash.testu3k.U3KNativeAdActivity'
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 }
 
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+<<<<<<< HEAD
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':common')
+    compile project(':factory')
+    //compile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:support-v13:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    compile "net.qiujuer.genius:graphics:$rootProject.ext.geniusVersion"
+    compile "net.qiujuer.genius:res:$rootProject.ext.geniusVersion"
+    compile "net.qiujuer.genius:kit-handler:$rootProject.ext.geniusVersion"
+    compile "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
+    compile "uk.co.chrisjenx:calligraphy:$rootProject.ext.calligraphyVersion"
+
+    compile files('libs/u3ksdk.jar')
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.google.android.gms:play-services-ads:10.0.1'
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+
+=======
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':common')
     implementation project(':factory')
@@ -74,10 +121,18 @@ dependencies {
 
 
     implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
     implementation 'com.google.android.gms:play-services-analytics:10.0.1'
     implementation 'com.google.firebase:firebase-core:10.0.1'
 
 
+<<<<<<< HEAD
+
+}
+
+
+
+=======
     implementation 'com.android.support:support-v4:26.1.0'
     implementation 'com.google.android.gms:play-services-ads:10.0.1'
 
@@ -90,4 +145,5 @@ repositories {
 }
 
 apply plugin: 'com.google.gms.google-services'
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 

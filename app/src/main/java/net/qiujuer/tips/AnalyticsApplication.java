@@ -26,4 +26,8 @@ public class AnalyticsApplication extends android.app.Application {
 
         return sTracker;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be

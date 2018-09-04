@@ -14,6 +14,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 import com.u3k.app.external.Ad;
 import com.u3k.app.external.InterstitialAd;
 import com.u3k.app.external.InterstitialAdListener;
@@ -50,6 +54,10 @@ public class RecordAddActivity extends BlurActivity implements RecordAddView,
     private RecordAddPresenter mPresenter;
     private ContactsAdapter mAdapter;
     private ContactModel mContactModel;
+<<<<<<< HEAD
+    private InterstitialAd interstitial;
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 
     public static void actionStart(BaseActivity context) {
         Intent intent = new Intent(context, RecordAddActivity.class);
@@ -292,7 +300,11 @@ public class RecordAddActivity extends BlurActivity implements RecordAddView,
             // Create
             mPresenter.create();
             Log.e("lyll","RecordAddActivity start load ad");
+<<<<<<< HEAD
+            interstitial= new InterstitialAd(LaunchActivity.mAppIdKey,RecordAddActivity.this, "u3k-1180816000032170818-20180816171103");
+=======
             InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,RecordAddActivity.this, "u3k-1180816000032170818-20180816171107");
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
             interstitial.setAdListener(new InterstitialAdListener() {
                 @Override
                 public void onError(Ad ad, int i, String s) {
@@ -302,6 +314,11 @@ public class RecordAddActivity extends BlurActivity implements RecordAddView,
                 @Override
                 public void onAdLoaded(Ad ad) {
                     Log.e("lyll","onAdLoaded ad--"+ad);
+<<<<<<< HEAD
+                    interstitial.show();
+                    Log.e("lyll","onAdLoaded ad show--"+interstitial.show());
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
                 }
 
                 @Override

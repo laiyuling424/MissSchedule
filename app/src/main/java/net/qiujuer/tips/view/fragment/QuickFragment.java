@@ -20,6 +20,10 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 import com.u3k.app.external.Ad;
 import com.u3k.app.external.InterstitialAd;
 import com.u3k.app.external.InterstitialAdListener;
@@ -51,6 +55,10 @@ public class QuickFragment extends Fragment implements View.OnClickListener, Dra
     private LinearLayout contentAdView;
     private Boolean isad;
     private Context ctx;
+<<<<<<< HEAD
+    private InterstitialAd interstitial;
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -73,18 +81,30 @@ public class QuickFragment extends Fragment implements View.OnClickListener, Dra
     public void setUserVisibleHint(boolean isVisibleToUser) {
         //Log.d("lyl","1----"+isVisibleToUser);
         isad=isVisibleToUser;
+<<<<<<< HEAD
+        Log.d("lyl","1.1---isad--"+isad);
+        super.setUserVisibleHint(isVisibleToUser);
+
+        //Log.d("lyll","1.1---isad--"+getActivity().getApplicationContext());
+=======
         //Log.d("lyl","1.1---isad--"+isad);
         super.setUserVisibleHint(isVisibleToUser);
         //Log.d("lyll","token--"+Application.token);
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 
 
 
         onActivityCreated(null);
         if(isVisibleToUser){
+<<<<<<< HEAD
+            Log.e("lyll","QuickFragment start load ad");
+            interstitial= new InterstitialAd(LaunchActivity.mAppIdKey,ctx, "u3k-1180816000032170818-20180816171102");
+=======
             Log.e("lyll","QuickFragment start load ad01");
             final InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,ctx, "u3k-1180816000032170818-20180816171102");//u3k-1180816000032170818-20180816171102
             //Log.d("lyll","token--"+LaunchActivity.token);
             //Log.d("lyll","interstitial--"+interstitial.toString());
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
             interstitial.setAdListener(new InterstitialAdListener() {
                 @Override
                 public void onError(Ad ad, int i, String s) {
@@ -94,6 +114,11 @@ public class QuickFragment extends Fragment implements View.OnClickListener, Dra
                 @Override
                 public void onAdLoaded(Ad ad) {
                     Log.e("lyll","onAdLoaded ad--"+ad);
+<<<<<<< HEAD
+                    interstitial.show();
+                    Log.e("lyll","onAdLoaded ad show--"+interstitial.show());
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
                 }
 
                 @Override
@@ -116,6 +141,11 @@ public class QuickFragment extends Fragment implements View.OnClickListener, Dra
                     Log.d("lyll","onInterstitialDismissed");
                 }
             });
+<<<<<<< HEAD
+            interstitial.loadAd();
+        }
+
+=======
             Timer timer=new Timer();
             timer.schedule(new TimerTask() {
                 @Override
@@ -124,12 +154,17 @@ public class QuickFragment extends Fragment implements View.OnClickListener, Dra
                 }
             },2000);
         }
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+<<<<<<< HEAD
+        Log.d("lyl","1.2---isad--"+isad);
+=======
         //Log.d("lyl","1.2---isad--"+isad);
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
     }
     @SuppressLint("CutPasteId")
     private void initTop(View view) {

@@ -17,6 +17,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 import com.u3k.app.external.Ad;
 import com.u3k.app.external.InterstitialAd;
 import com.u3k.app.external.InterstitialAdListener;
@@ -43,6 +47,10 @@ public class ContactAddActivity extends BlurActivity implements ContactAddView,
     protected int mRelation;
     private String[] mRelationStr;
     private LinearLayout contentAdView;
+<<<<<<< HEAD
+    private InterstitialAd interstitial;
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 
     public static void actionStart(BaseActivity context) {
         Intent intent = new Intent(context, ContactAddActivity.class);
@@ -190,7 +198,11 @@ public class ContactAddActivity extends BlurActivity implements ContactAddView,
         } else if (id == R.id.btn_save) {
             mPresenter.create();
             Log.e("lyll","ContactAddActivity start load ad");
+<<<<<<< HEAD
+            interstitial= new InterstitialAd(LaunchActivity.mAppIdKey,ContactAddActivity.this, "u3k-1180816000032170818-20180816171107");
+=======
             InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,ContactAddActivity.this, "u3k-1180816000032170818-20180816171103");//u3k-1180816000032170818-20180816171103
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
             interstitial.setAdListener(new InterstitialAdListener() {
                 @Override
                 public void onError(Ad ad, int i, String s) {
@@ -200,6 +212,11 @@ public class ContactAddActivity extends BlurActivity implements ContactAddView,
                 @Override
                 public void onAdLoaded(Ad ad) {
                     Log.e("lyll","onAdLoaded ad--"+ad);
+<<<<<<< HEAD
+                    interstitial.show();
+                    Log.e("lyll","onAdLoaded ad show--"+interstitial.show());
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
                 }
 
                 @Override

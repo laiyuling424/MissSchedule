@@ -15,6 +15,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 import com.u3k.app.external.Ad;
 import com.u3k.app.external.InterstitialAd;
 import com.u3k.app.external.InterstitialAdListener;
@@ -44,6 +48,10 @@ public class ContactDetailActivity extends BlurActivity implements ContactDetail
     private FloatActionButton mFltAtnBtn,mFltnDeleteBtn;
     private ContactRecordsAdapter mAdapter;
     private int mGender;
+<<<<<<< HEAD
+    private InterstitialAd interstitial;
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
 
     private View mTop;
 
@@ -240,7 +248,11 @@ public class ContactDetailActivity extends BlurActivity implements ContactDetail
             ContactEditActivity.actionStart(ContactDetailActivity.this, mId);
             setBlur(ContactDetailActivity.this);
             Log.e("lyll","ContactDetailActivity start load ad");
+<<<<<<< HEAD
+            interstitial= new InterstitialAd(LaunchActivity.mAppIdKey,ContactDetailActivity.this, "u3k-1180816000032170818-20180816171102");
+=======
             InterstitialAd interstitial= new InterstitialAd(LaunchActivity.token,ContactDetailActivity.this, "u3k-1180816000032170818-20180816171108");
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
             interstitial.setAdListener(new InterstitialAdListener() {
                 @Override
                 public void onError(Ad ad, int i, String s) {
@@ -250,6 +262,11 @@ public class ContactDetailActivity extends BlurActivity implements ContactDetail
                 @Override
                 public void onAdLoaded(Ad ad) {
                     Log.e("lyll","onAdLoaded ad--"+ad);
+<<<<<<< HEAD
+                    interstitial.show();
+                    Log.e("lyll","onAdLoaded ad show--"+interstitial.show());
+=======
+>>>>>>> 11eb2a081577acd721926bde7bd501f1ea47a1be
                 }
 
                 @Override
